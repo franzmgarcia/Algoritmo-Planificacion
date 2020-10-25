@@ -1,5 +1,10 @@
 #! /usr/bin/env python
 
+import time
+
+start_time = time.time() #añadimos esto para determinar el tiempo de ejecucion
+
+
 FILE_NAME = "map1.csv"
 START_X = 2
 START_Y = 2
@@ -119,3 +124,6 @@ while not ok:
             if( goalParentId == -2):
                 print("%%%%%%%%%%%%%%%%%2")
                 ok = True
+
+t_ejecucion = time.time() - start_time
+print("Tiempo de ejecucion: "+ str(t_ejecucion)+" segundos")
