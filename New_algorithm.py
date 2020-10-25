@@ -16,6 +16,8 @@ import time # usamos la libreria time para poder medir el tiempo de ejecucion de
         Asi varias veces hasta que lleguemos a un punto en el que podamos ir hacia abajo y lleguemos a la misma coordenada en x
         Una vez llegado a ese punto vamos hacia la izquierda como primera opcion, y si no es posible volvemos a hacer el barrido 
         Como se realizo previamente
+
+        Este algoritmo adicionalmente mide el tiempo de ejecucion
 """
 
 start_time = time.time()
