@@ -156,7 +156,7 @@ while not done:
                 # Esto sirve un poco de via de escape para el algoritmo, de manera que pueda salir de estancamientos
                 # cuando al avanzara vayamos todo hacia la derecha
                 # Si encontramos que el nodo que ibamos a visitar ya habia sido visitado, nos movemos a la izquierda
-                elif( charMap[tmpX][tmpY] == '2'):
+                elif( charMap[tmpX][tmpY] == '2' and charMap[node.x][node.y -1] != '1'):
                     tmpX = node.x
                     tmpY = node.y -1
                     print("Izquierda: porque ya antes ha sido visitado")
