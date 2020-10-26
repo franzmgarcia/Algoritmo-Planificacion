@@ -1,6 +1,7 @@
 #! /usr/bin/env python
 import time # usamos la libreria time para poder medir el tiempo de ejecucion del programa
-
+import numpy as np # usamos la libreria numpy para transformar en un numpy array el arreglo charMap
+import pandas as pd # Usamos pandas para transformar el numpy array en dataframe y luego en csv
 
 """
         En este caso tenemos un algoritmo greedy que resuelve solo algunos mapas 
@@ -241,3 +242,8 @@ while not ok:
             if( goalParentId == -2):
                 print("%%%%%%%%%%%%%%%%%2")
                 ok = True
+
+# se transforma el charMap en un numpy array
+array_csv = np.asarray(charMap)
+# Se convierte a un archivo en formato csv que se genera automaticamente a partir del nombre del mapa a resolver
+pd.DataFrame(array_csv).to_csv("solve"+FILE_NAME,header=None,index=None)

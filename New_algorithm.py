@@ -1,7 +1,7 @@
 #! /usr/bin/env python
 import time # usamos la libreria time para poder medir el tiempo de ejecucion del programa
-import numpy as np
-import pandas as pd
+import numpy as np # usamos la libreria numpy para transformar en un numpy array el arreglo charMap
+import pandas as pd # Usamos pandas para transformar el numpy array en dataframe y luego en csv
 
 """
         En este caso tenemos un algoritmo greedy que resuelve solo algunos mapas 
@@ -23,7 +23,6 @@ import pandas as pd
 
 start_time = time.time()
 
-"""
 ############ Mapa 1 ###################
 FILE_NAME = "map1.csv"
 START_X = 2
@@ -31,7 +30,6 @@ START_Y = 2
 END_X = 7
 END_Y = 2
 ########################################
-"""
 
 """
 # Descomentar para probar el mapa 2
@@ -42,14 +40,14 @@ END_X = 10
 END_Y = 7
 """
 
-
+"""
 # Descomentar para probar el mapa 6
 FILE_NAME = "map6.csv"
 START_X = 2
 START_Y = 2
 END_X = 10
 END_Y = 17
-
+"""
 
 # Definimos la clase nodo que tiene las posiciones en x,y, su propio id y un nodo padre
 # Este tiene un metodo dump definido que imprime todos estos valores
@@ -248,6 +246,7 @@ while not ok:
 t_ejecucion = time.time() - start_time
 print("Tiempo de ejecucion: "+ str(t_ejecucion)+" segundos")
 
+# se transforma el charMap en un numpy array
 array_csv = np.asarray(charMap)
-print(array_csv)
+# Se convierte a un archivo en formato csv que se genera automaticamente a partir del nombre del mapa a resolver
 pd.DataFrame(array_csv).to_csv("solve"+FILE_NAME,header=None,index=None)
